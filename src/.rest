@@ -1,0 +1,26 @@
+###
+GET http://localhost:3000/
+
+###
+GET http://localhost:3000/<id>
+
+###
+POST http://localhost:3000/
+content-type: application/json
+
+{
+    "title": "Create a task",
+    "description": "Task to test the system",
+    "status": "Pending"
+}
+
+###
+POST http://localhost:3000/edit/<id>
+content-type: application/json
+
+{
+    "status": "In Progress"
+}
+
+###
+GET http://localhost:3000/delete/<id>

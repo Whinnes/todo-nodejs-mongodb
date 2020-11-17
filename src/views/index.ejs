@@ -1,0 +1,70 @@
+<%- include ('partials/head.ejs') -%>
+<%- include ('partials/navigation.ejs') -%>
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <p>Pending</p>
+                </div>
+                <% tasks.forEach(function (task) { %>
+                <% if(task.status == "Pending") { %>
+                <div class="card-body">
+                    <p><%= task.title %></p>
+                    <p><%= task.description %></p>
+                    <p><%= task.status %></p>
+                </div>
+                <div class="card-footer ">
+                    <a href="/delete/<%= task._id%>" class="btn btn-danger">Delete</a>
+                    <a href="/edit/<%= task._id%>" class="btn btn-warning">Edit</a>
+                </div>
+                <% } %>
+                <% })%>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <p>In Progress</p>
+                </div>
+                <% tasks.forEach(function (task) { %>
+                <% if(task.status == "In Progress") { %>
+                <div class="card-body">
+                    <p><%= task.title %></p>
+                    <p><%= task.description %></p>
+                    <p><%= task.status %></p>
+                </div>
+                <div class="card-footer ">
+                    <a href="/delete/<%= task._id%>" class="btn btn-danger">Delete</a>
+                    <a href="/edit/<%= task._id%>" class="btn btn-warning">Edit</a>
+                </div>
+                <% } %>
+                <% })%>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <p>Completed</p>
+                </div>
+                <% tasks.forEach(function (task) { %>
+                <% if(task.status == "Completed") { %>
+                <div class="card-body">
+                    <p><%= task.title %></p>
+                    <p><%= task.description %></p>
+                    <p><%= task.status %></p>
+                </div>
+                <div class="card-footer ">
+                    <a href="/delete/<%= task._id%>" class="btn btn-danger">Delete</a>
+                    <a href="/edit/<%= task._id%>" class="btn btn-warning">Edit</a>
+                </div>
+                <% } %>
+                <% })%>
+            </div>
+        </div>
+
+    </div>
+</div>
+<%- include ('partials/footer.ejs') -%>
